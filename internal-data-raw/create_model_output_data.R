@@ -56,12 +56,13 @@ get_cat_forecasts_from_q <- function(df, locations) {
   result <- df |>
     left_join(locations, by = "location") |>
     group_by(location, reference_date, horizon, target_end_date) |>
-    mutate(
+    summarize(
       target = "wk flu hosp rate category",
       value = get_cat_probs(output_type_id, value,
                             threshold_1[1], threshold_2[1], threshold_3[1]),
       output_type = "pmf",
-      output_type_id = list(c("low", "moderate", "high", "very high"))
+      output_type_id = list(c("low", "moderate", "high", "very high")),
+      .groups = "drop"
     ) |>
     unnest(cols = c(output_type_id, value)) |>
     select(location, reference_date, horizon, target_end_date, target,
