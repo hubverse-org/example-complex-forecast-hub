@@ -46,6 +46,9 @@ get_cat_probs <- function(output_type_id, value, threshold_1, threshold_2,
                                qs = as.numeric(value))
   boundary_probs <- c(0, p_fn(c(threshold_1, threshold_2, threshold_3)), 1)
   cat_probs <- diff(boundary_probs)
+  cat_probs <- pmin(cat_probs, 1)
+  cat_probs <- pmax(cat_probs, 0)
+  cat_probs <- cat_probs / sum(cat_probs)
   return(list(cat_probs))
 }
 

@@ -249,7 +249,7 @@
                               "optional": ["NA"]
                           },
                           "value": {
-                              "type": "integer",
+                              "type": "double",
                               "minimum": 0
                           }
                         },
@@ -259,7 +259,7 @@
                               "optional": ["NA"]
                           },
                           "value": {
-                              "type": "integer",
+                              "type": "double",
                               "minimum": 0
                           }
                         },
