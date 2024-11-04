@@ -174,8 +174,9 @@ target_data_distinct <- bind_rows(
 
 # drop reference_date and horizon columns
 target_data_distinct <- target_data_distinct |>
+  rename(oracle_value = observation) |>
   select(-reference_date, -horizon) |>
   distinct()
 
 write_csv(target_data_distinct,
-          file = "target-data/target-observations.csv")
+          file = "target-data/oracle-output.csv")
