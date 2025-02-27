@@ -6,21 +6,9 @@ library(hubUtils)
 library(here)
 setwd(here())
 
-# read in "starting point" data sets
-target_data_raw <- read.csv(
-  "internal-data-raw/target-data-orig/truth-Incident Hospitalizations.csv")
-
+# read in "starting point" location data set
 locations_raw <- read.csv(
   "internal-data-raw/auxiliary-data-orig/locations.csv")
-
-
-# save target data in time series format
-target_data_ts <- target_data_raw[, c("date", "location", "value")] |>
-  filter(location %in% locations_raw$location) |>
-  rename(observation = value)
-write_csv(target_data_ts,
-          file = "target-data/time-series.csv")
-
 
 # create auxiliary-data/locations.csv
 locations <- locations_raw[, c("location", "abbreviation", "location_name",
@@ -35,6 +23,34 @@ for (i in seq_along(thresholds)) {
 }
 
 write_csv(locations, file = "auxiliary-data/locations.csv")
+
+# read in "starting point" Incident Hospitalizations data set
+target_data_raw <- read.csv(
+  "internal-data-raw/target-data-orig/truth-Incident Hospitalizations.csv")
+
+# Create wk inc flu hosp target time-series data
+target_data_ts <- target_data_raw[, c("date", "location", "value")] |>
+  filter(location %in% locations_raw$location) |>
+  rename(observation = value) |>
+  mutate(target = "wk inc flu hosp") |>
+  select(date, target, location, observation)
+
+# Create wk flu hosp rate target time-series data
+obs_rates_ts <-  target_data_ts |>
+  left_join(locations, by = "location") |>
+  mutate(rate = observation / (population / 100000),
+         target = "wk flu hosp rate") |>
+  select(date, target, location, rate) |>
+  rename(observation = rate)
+
+# save target data in time series format for both targets
+target_data_ts |>
+  bind_rows(obs_rates_ts) |>
+  write_csv(file = "target-data/time-series.csv")
+
+# Remove target column from target_data_ts
+target_data_ts <- target_data_ts |>
+  select(-target)
 
 # check with a plot
 if (interactive()) {
