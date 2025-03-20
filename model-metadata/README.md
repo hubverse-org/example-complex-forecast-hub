@@ -88,9 +88,9 @@ The Open Data Commons provides licenses specifically for open data. There are th
 
 #### UK National Archives Open Government License
 
-Finally, there is a license available from the UK National Archives for information sharing.
+Finally, there is a license available from the UK National Archives for information sharing from the public sector under a common open licence. 
 
-- ["OGL-3.0"](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/): Anyone is free to do anything with the information as long as they attribute the originators and the original license. 
+- ["OGL-3.0"](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/): Anyone is free to do anything with the information as long as they attribute the originators and the original license (with some exemptions). 
 
 ### designated_model 
 
