@@ -67,10 +67,30 @@ model_contributors: [
 
 ### license
 
-One of the [accepted licenses](https://github.com/cdcepi/FluSight-forecast-hub/blob/673e983fee54f3a21448071ac46a9f78d27dd164/hub-config/model-metadata-schema.json#L69-L75).
+We encourage teams to submit as a "cc-by-4.0" to allow the broadest possible uses, including private vaccine production (which would be excluded by the "cc-by-nc-4.0" license).
+Otherwise, any one of the following [accepted licenses](https://github.com/cdcepi/FluSight-forecast-hub/blob/673e983fee54f3a21448071ac46a9f78d27dd164/hub-config/model-metadata-schema.json#L69-L75) can be used:
 
-We encourage teams to submit as a "cc-by-4.0" to allow the broadest possible uses
-including private vaccine production (which would be excluded by the "cc-by-nc-4.0" license). 
+#### Creative Commons
+
+The Creative Commons provides licenses for creative works and data. There are three Creative Commons licenses that are appropriate for hub data, each listed here with a short summary of their purpose and limitations.
+
+- ["CC0-1.0"](https://creativecommons.org/publicdomain/zero/1.0/deed.en), the "public domain" license. Anyone is free to use the data with or without attribution.
+- ["CC-BY-4.0"](https://creativecommons.org/licenses/by/4.0/deed.en): Anyone is free to use the data as long as they attribute it to the originators.
+- ["CC-BY_SA-4.0"](https://creativecommons.org/licenses/by-sa/4.0/deed.en): Anyone is free to use the data as long as they attribute it to the originators AND they _also_ distribute the data under the same license (This is a type of [copy-left license](https://en.wikipedia.org/wiki/Copyleft#Share-alike))
+
+#### Open Data Commons
+
+The Open Data Commons provides licenses specifically for open data. There are three licenses that are appropriate for hub data, each listed here with a short summary of their purpose and limitations.
+
+- ["PPDL"](https://opendatacommons.org/licenses/pddl/summary/): Anyone is free to do anything with these data with no restriction.
+- ["ODC-by"](https://opendatacommons.org/licenses/by/summary/): Anyone is free to do anything with the data as long as they acknowledge the originators of the data and the original license.
+- ["ODbL"](https://opendatacommons.org/licenses/odbl/summary/): Anyone is free to do anything with the data as long as they acknowledge the originators of the data AND distribute it and any modification freely under the same license (Share-Alike)
+
+#### UK National Archives Open Government License
+
+Finally, there is a license available from the UK National Archives for information sharing from the public sector under a common open licence. 
+
+- ["OGL-3.0"](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/): Anyone is free to do anything with the information as long as they attribute the originators and the original license (with some exemptions). 
 
 ### designated_model 
 
