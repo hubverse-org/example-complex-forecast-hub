@@ -69,13 +69,28 @@ model_contributors: [
 
 We encourage teams to submit as a "cc-by-4.0" to allow the broadest possible uses, including private vaccine production (which would be excluded by the "cc-by-nc-4.0" license).
 Otherwise, any one of the following [accepted licenses](https://github.com/cdcepi/FluSight-forecast-hub/blob/673e983fee54f3a21448071ac46a9f78d27dd164/hub-config/model-metadata-schema.json#L69-L75) can be used:
-- ["CC0-1.0"](https://creativecommons.org/publicdomain/zero/1.0/deed.en): "The person who associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission."
-- ["CC-BY-4.0"](https://creativecommons.org/licenses/by/4.0/deed.en): "You are free to: Share — copy and redistribute the material in any medium or format for any purpose, even commercially. Adapt — remix, transform, and build upon the material for any purpose, even commercially. The licensor cannot revoke these freedoms as long as you follow the license terms. Under the following terms: Attribution — You must give appropriate credit , provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits."
-- ["CC-BY_SA-4.0"](https://creativecommons.org/licenses/by-sa/4.0/deed.en): "You are free to: Share — copy and redistribute the material in any medium or format for any purpose, even commercially. Adapt — remix, transform, and build upon the material for any purpose, even commercially. The licensor cannot revoke these freedoms as long as you follow the license terms. Under the following terms: Attribution — You must give appropriate credit , provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original. No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits."
-- ["PPDL"](https://opendatacommons.org/licenses/pddl/summary/): "You are free: To share: To copy, distribute and use the database. To create: To produce works from the database. To adapt: To modify, transform and build upon the database. The PDDL imposes no restrictions on your use of the PDDL licensed database."
-- ["ODC-by"](https://opendatacommons.org/licenses/by/summary/): "You are free: To share: To copy, distribute and use the database. To create: To produce works from the database. To adapt: To modify, transform and build upon the database. As long as you: Attribute: You must attribute any public use of the database, or works produced from the database, in the manner specified in the license. For any use or redistribution of the database, or works produced from it, you must make clear to others the license of the database and keep intact any notices on the original database."
-- ["ODbL"](https://opendatacommons.org/licenses/odbl/summary/): "You are free: To share: To copy, distribute and use the database. To create: To produce works from the database. To adapt: To modify, transform and build upon the database. As long as you: Attribute: You must attribute any public use of the database, or works produced from the database, in the manner specified in the ODbL. For any use or redistribution of the database, or works produced from it, you must make clear to others the license of the database and keep intact any notices on the original database. Share-Alike: If you publicly use any adapted version of this database, or works produced from an adapted database, you must also offer that adapted database under the ODbL. Keep open: If you redistribute the database, or an adapted version of it, then you may use technological measures that restrict the work (such as DRM) as long as you also redistribute a version without such measures."
-- ["OGL-3.0"](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/): "You are free to: copy, publish, distribute and transmit the Information; adapt the Information; exploit the Information commercially and non-commercially for example, by combining it with other Information, or by including it in your own product or application. You must (where you do any of the above): acknowledge the source of the Information in your product or application by including or linking to any attribution statement specified by the Information Provider(s) and, where possible, provide a link to this licence."
+
+#### Creative Commons
+
+The Creative Commons provides licenses for creative works and data. There are three Creative Commons licenses that are appropriate for hub data, each listed here with a short summary of their purpose and limitations.
+
+- ["CC0-1.0"](https://creativecommons.org/publicdomain/zero/1.0/deed.en), the "public domain" license. Anyone is free to use the data with or without attribution.
+- ["CC-BY-4.0"](https://creativecommons.org/licenses/by/4.0/deed.en): Anyone is free to use the data as long as they attribute it to the originators.
+- ["CC-BY_SA-4.0"](https://creativecommons.org/licenses/by-sa/4.0/deed.en): Anyone is free to use the data as long as they attribute it to the originators AND they _also_ distribute the data under the same license (This is a type of [copy-left license](https://en.wikipedia.org/wiki/Copyleft#Share-alike))
+
+#### Open Data Commons
+
+The Open Data Commons provides licenses specifically for open data. There are three licenses that are appropriate for hub data, each listed here with a short summary of their purpose and limitations.
+
+- ["PPDL"](https://opendatacommons.org/licenses/pddl/summary/): Anyone is free to do anything with these data with no restriction.
+- ["ODC-by"](https://opendatacommons.org/licenses/by/summary/): Anyone is free to do anything with the data as long as they acknowledge the originators of the data and the original license.
+- ["ODbL"](https://opendatacommons.org/licenses/odbl/summary/): Anyone is free to do anything with the data as long as they acknowledge the originators of the data AND distribute it and any modification freely under the same license (Share-Alike)
+
+#### UK National Archives Open Government License
+
+Finally, there is a license available from the UK National Archives for information sharing.
+
+- ["OGL-3.0"](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/): Anyone is free to do anything with the information as long as they attribute the originators and the original license. 
 
 ### designated_model 
 
