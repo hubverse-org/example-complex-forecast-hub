@@ -86,7 +86,8 @@ schaake_shuffle_ar <- function(value, horizon, sample_index, rho) {
   return(x_ordered[cbind(sample_index, horizon)])
 }
 
-get_sample_forecasts_from_q <- function(df, n = 100, rho = 0.9) {
+get_sample_forecasts_from_q <- function(df, n = 100, rho = 0.9, locations = NULL) {
+  df_names <- colnames(df)
   # set up a data frame with marginal samples for each date/location,
   # joint across horizon
   df <- df |>
@@ -106,21 +107,32 @@ get_sample_forecasts_from_q <- function(df, n = 100, rho = 0.9) {
     dplyr::group_by(location, reference_date) |>
     # induce dependence across horizons for each location/date combo
     dplyr::mutate(
+      output_type = "sample",
       value = schaake_shuffle_ar(value, horizon + 1, sample_index, rho)
     ) |>
-    dplyr::ungroup() |>
-    # get to desired columns: output_type, output_type_id, no sample_index
-    dplyr::mutate(
-      output_type = "sample",
-      output_type_id = as.character(
-        sample_index +
-          n * (as.integer(factor(paste0(location, reference_date))) - 1)
-      )
-    ) |>
-    dplyr::select(-sample_index) |>
     dplyr::ungroup()
 
-  return(df)
+  if (is.null(locations)) {
+    locations <- df |>
+      dplyr::select("location") |>
+      dplyr::distinct(location)
+  }
+
+  # get to desired columns: output_type, output_type_id, no sample_index
+  # fips_index column and join deals with missing locations when calculating
+  #  output_type_id values so indices remain standardized no matter what
+  locations |>
+    dplyr::arrange(location) |>
+    tibble::rownames_to_column(var = "fips_index") |>
+    dplyr::full_join(df, by = "location") |>
+    dplyr::mutate(
+      output_type_id = as.character(
+        sample_index + n * (as.integer(fips_index) - 1)
+      )
+    ) |>
+    dplyr::select(dplyr::all_of(df_names)) |>
+    tidyr::drop_na() |>
+    dplyr::ungroup()
 }
 
 get_cat_probs <- function(output_type_id, value, threshold_1, threshold_2,
@@ -210,7 +222,7 @@ for (f in files) {
     df %>% dplyr::mutate(output_type_id = as.character(output_type_id)),
     get_median_forecasts_from_q(df),
     get_mean_forecasts_from_q(df),
-    get_sample_forecasts_from_q(df),
+    get_sample_forecasts_from_q(df, locations = locations),
     get_cat_forecasts_from_q(df, locations),
     get_rate_cdf_forecasts_from_q(df, locations)
   )
