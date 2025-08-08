@@ -5919,7 +5919,7 @@ US,2022-10-22,3,2022-11-12,wk inc flu hosp,mean,NA,3869.91705233493
 02,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,118,1
 02,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,119,5
 02,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,120,4
-02,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,121,-2
+02,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,121,0
 02,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,122,3
 02,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,123,4
 02,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,124,3
@@ -7531,7 +7531,7 @@ US,2022-10-22,3,2022-11-12,wk inc flu hosp,mean,NA,3869.91705233493
 08,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,530,3
 08,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,531,4
 08,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,532,5
-08,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,533,-1
+08,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,533,0
 08,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,534,2
 08,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,535,5
 08,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,536,2
@@ -7590,7 +7590,7 @@ US,2022-10-22,3,2022-11-12,wk inc flu hosp,mean,NA,3869.91705233493
 08,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,589,2
 08,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,590,1
 08,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,591,8
-08,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,592,-1
+08,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,592,0
 08,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,593,10
 08,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,594,8
 08,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,595,2
@@ -12114,7 +12114,7 @@ US,2022-10-22,3,2022-11-12,wk inc flu hosp,mean,NA,3869.91705233493
 21,2022-10-22,0,2022-10-22,wk inc flu hosp,sample,1713,25
 21,2022-10-22,0,2022-10-22,wk inc flu hosp,sample,1714,21
 21,2022-10-22,0,2022-10-22,wk inc flu hosp,sample,1715,5
-21,2022-10-22,0,2022-10-22,wk inc flu hosp,sample,1716,-7
+21,2022-10-22,0,2022-10-22,wk inc flu hosp,sample,1716,0
 21,2022-10-22,0,2022-10-22,wk inc flu hosp,sample,1717,26
 21,2022-10-22,0,2022-10-22,wk inc flu hosp,sample,1718,9
 21,2022-10-22,0,2022-10-22,wk inc flu hosp,sample,1719,19
@@ -12186,7 +12186,7 @@ US,2022-10-22,3,2022-11-12,wk inc flu hosp,mean,NA,3869.91705233493
 21,2022-10-22,0,2022-10-22,wk inc flu hosp,sample,1785,42
 21,2022-10-22,0,2022-10-22,wk inc flu hosp,sample,1786,38
 21,2022-10-22,0,2022-10-22,wk inc flu hosp,sample,1787,31
-21,2022-10-22,0,2022-10-22,wk inc flu hosp,sample,1788,-1
+21,2022-10-22,0,2022-10-22,wk inc flu hosp,sample,1788,0
 21,2022-10-22,0,2022-10-22,wk inc flu hosp,sample,1789,32
 21,2022-10-22,0,2022-10-22,wk inc flu hosp,sample,1790,24
 21,2022-10-22,0,2022-10-22,wk inc flu hosp,sample,1791,36
@@ -14087,7 +14087,7 @@ US,2022-10-22,3,2022-11-12,wk inc flu hosp,mean,NA,3869.91705233493
 25,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,2186,14
 25,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,2187,16
 25,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,2188,16
-25,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,2189,-2
+25,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,2189,0
 25,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,2190,11
 25,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,2191,22
 25,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,2192,19
@@ -20488,7 +20488,7 @@ US,2022-10-22,3,2022-11-12,wk inc flu hosp,mean,NA,3869.91705233493
 41,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,3787,3
 41,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,3788,5
 41,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,3789,4
-41,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,3790,-1
+41,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,3790,0
 41,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,3791,9
 41,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,3792,3
 41,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,3793,4
@@ -24884,7 +24884,7 @@ US,2022-10-22,3,2022-11-12,wk inc flu hosp,mean,NA,3869.91705233493
 54,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,4883,30
 54,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,4884,41
 54,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,4885,48
-54,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,4886,-6
+54,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,4886,0
 54,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,4887,40
 54,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,4888,29
 54,2022-10-22,3,2022-11-12,wk inc flu hosp,sample,4889,39
@@ -25117,7 +25117,7 @@ US,2022-10-22,3,2022-11-12,wk inc flu hosp,mean,NA,3869.91705233493
 55,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,4916,5
 55,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,4917,4
 55,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,4918,8
-55,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,4919,-1
+55,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,4919,0
 55,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,4920,5
 55,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,4921,4
 55,2022-10-22,2,2022-11-05,wk inc flu hosp,sample,4922,6
