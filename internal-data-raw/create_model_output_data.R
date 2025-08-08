@@ -128,7 +128,8 @@ get_sample_forecasts_from_q <- function(df, n = 100, rho = 0.9, locations = NULL
     dplyr::mutate(
       output_type_id = as.character(
         sample_index + n * (as.integer(fips_index) - 1)
-      )
+      ),
+      value = pmax(value, 0)
     ) |>
     dplyr::select(dplyr::all_of(df_names)) |>
     tidyr::drop_na() |>
