@@ -8,6 +8,11 @@ on:
       - 'hub-config/**'
       - '!**README**'
 
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
 jobs:
   validate-hub-config:
     runs-on: ubuntu-22.04
@@ -52,4 +57,3 @@ jobs:
         run: |
           echo "::error title=Invalid Configuration::Errors were detected in one or more config files in 'hub-config/'"
           exit 1
-
