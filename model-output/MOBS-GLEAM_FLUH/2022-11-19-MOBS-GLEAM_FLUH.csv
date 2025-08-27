@@ -1,5 +1,5 @@
 location,reference_date,horizon,target_end_date,target,output_type,output_type_id,value
-US,2022-11-19,0,2022-11-19,wk inc flu hosp,quantile,0.01,8295
+US,2022-11-19,0,2022-11-19,wk inc flu hosp,quantile,0.01,8300
 US,2022-11-19,0,2022-11-19,wk inc flu hosp,quantile,0.025,8611
 US,2022-11-19,0,2022-11-19,wk inc flu hosp,quantile,0.05,8889
 US,2022-11-19,0,2022-11-19,wk inc flu hosp,quantile,0.1,9241
