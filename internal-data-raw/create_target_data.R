@@ -31,16 +31,16 @@ target_data_raw <- read.csv(
 # Create wk inc flu hosp target time-series data
 target_data_ts <- target_data_raw[, c("date", "location", "value")] |>
   filter(location %in% locations_raw$location) |>
-  rename(observation = value) |>
+  rename(target_end_date = date, observation = value) |>
   mutate(target = "wk inc flu hosp") |>
-  select(date, target, location, observation)
+  select(target_end_date, target, location, observation)
 
 # Create wk flu hosp rate target time-series data
 obs_rates_ts <-  target_data_ts |>
   left_join(locations, by = "location") |>
   mutate(rate = observation / (population / 100000),
          target = "wk flu hosp rate") |>
-  select(date, target, location, rate) |>
+  select(target_end_date, target, location, rate) |>
   rename(observation = rate)
 
 # save target data in time series format for both targets
@@ -57,11 +57,11 @@ if (interactive()) {
   ggplot() +
     geom_line(
       data = target_data_ts |>
-        mutate(date = as.Date(date)) |>
-        filter(date >= "2022-10-01", date <= "2023-07-01") |>
+        mutate(target_end_date = as.Date(target_end_date)) |>
+        filter(target_end_date >= "2022-10-01", target_end_date <= "2023-07-01") |>
         left_join(locations, by = "location") |>
         filter(!is.na(abbreviation)),
-      mapping = aes(x = date, y = observation)
+      mapping = aes(x = target_end_date, y = observation)
     ) +
     geom_hline(
       data = locations,
@@ -98,7 +98,7 @@ get_expanded_tasks_outputs <- function(target_block) {
     names(output_meta),
     function(output_type) {
       output_type_meta <- output_meta[[output_type]]
-      if (output_type == "sample") {
+      if (output_type %in% c("mean", "median", "sample")) {
         return(
           data.frame(
             output_type = output_type,
@@ -132,7 +132,7 @@ obs_target_values_inc <- target_rows |>
   filter(target == "wk inc flu hosp") |>
   left_join(
     target_data_ts,
-    by = join_by(location, target_end_date == date)
+    by = join_by(location, target_end_date)
   )
 
 obs_rate_cat <- target_data_ts |>
@@ -151,11 +151,11 @@ obs_rate_cat <- target_data_ts |>
 obs_target_values_rate_cat <- target_rows |>
   filter(target == "wk flu hosp rate category") |>
   left_join(
-    obs_rate_cat |> select(location, date, output_type_id, observation),
-    by = join_by(location, target_end_date == date, output_type_id)) |>
-  mutate(
-    observation = ifelse(is.na(observation), 0, 1)
-  )
+    obs_rate_cat |>
+      select(location, target_end_date, output_type_id, observation),
+    by = join_by(location, target_end_date, output_type_id)
+  ) |>
+  mutate(observation = ifelse(is.na(observation), 0, 1))
 
 obs_rates <- target_data_ts |>
   left_join(locations, by = "location") |>
@@ -164,18 +164,18 @@ obs_rates <- target_data_ts |>
 obs_target_values_rate <- target_rows |>
   filter(target == "wk flu hosp rate") |>
   left_join(
-    obs_rates |> select(location, date, rate),
-    by = join_by(location, target_end_date == date)) |>
-  mutate(
-    observation = as.integer(as.numeric(output_type_id) >= rate)
+    obs_rates |> select(location, target_end_date, rate),
+    by = join_by(location, target_end_date)
   ) |>
+  mutate(observation = as.integer(as.numeric(output_type_id) >= rate)) |>
   select(-rate)
 
 
 target_data_complete <- bind_rows(
   obs_target_values_inc,
   obs_target_values_rate_cat,
-  obs_target_values_rate)
+  obs_target_values_rate
+)
 
 # set output_type_id to "NA" for the quantile output_type,
 # then remove duplicate rows created by that action
@@ -194,5 +194,4 @@ target_data_distinct <- target_data_distinct |>
   select(-reference_date, -horizon) |>
   distinct()
 
-write_csv(target_data_distinct,
-          file = "target-data/oracle-output.csv")
+write_csv(target_data_distinct, file = "target-data/oracle-output.csv")
