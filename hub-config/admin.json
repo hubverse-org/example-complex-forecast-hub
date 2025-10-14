@@ -9,11 +9,10 @@
     "repository": {
         "host": "github",
         "owner": "Infectious-Disease-Modeling-Hubs",
-        "repository": "example-complex-forecast-hub"
+        "name": "example-complex-forecast-hub"
     },
     "file_format": ["csv"],
     "timezone": "US/Eastern",
-    "model_output_dir": "model-output",
     "cloud": {
         "enabled": true,
         "host": {
