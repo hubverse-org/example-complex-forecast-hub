@@ -1,5 +1,5 @@
 {
-    "schema_version": "https://raw.githubusercontent.com/hubverse-org/schemas/main/v5.0.0/admin-schema.json",
+    "schema_version": "https://raw.githubusercontent.com/hubverse-org/schemas/main/v6.0.0/admin-schema.json",
     "name": "Example complex forecast hub",
     "maintainer": "hubverse",
     "contact": {
@@ -9,11 +9,10 @@
     "repository": {
         "host": "github",
         "owner": "Infectious-Disease-Modeling-Hubs",
-        "repository": "example-complex-forecast-hub"
+        "name": "example-complex-forecast-hub"
     },
     "file_format": ["csv"],
     "timezone": "US/Eastern",
-    "model_output_dir": "model-output",
     "cloud": {
         "enabled": true,
         "host": {
