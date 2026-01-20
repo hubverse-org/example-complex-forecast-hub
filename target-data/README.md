@@ -15,11 +15,11 @@ This folder contains target data for the hub. There are two files:
 
   - `location`: FIPS code identifying a US location
   - `target_end_date`: the Saturday ending the target week of the forecast, in format `yyyy-mm-dd`.
-  - `target`: the target variable for the forecast. In this file, values of the target are one of `"wk inc flu hosp"`, `"wk flu hosp rate"`, `"wk for your hosp great category"`
+  - `target`: the target variable for the forecast. In this file, values of the target are one of `"wk inc flu hosp"`, `"wk flu hosp rate"`, `"wk flu hosp rate category"`
   - `output_type`: the type of forecast for the specified `target`. The output type defines the format of the `output_type_id` and `oracle_value` column values
   - `output_type_id`: depends based on the particular `target` and `output_type`
     - For `"wk inc flu hosp"`, all values are NA
-    - For `"wk flu hosp rate category"`, the CDF values of interest for the weekly influenza hospital admission rate per 100,000 population
+    - For `"wk flu hosp rate"`, the CDF values of interest for the weekly influenza hospital admission rate per 100,000 population
     - For `"wk flu hosp rate category"`, the names of the possible rate categories
   - `oracle_value`: depends based on the particular `target` and `output_type`
     - For `"wk inc flu hosp"`, the reported number of influenza hospital admissions in the specified location during the week ending on the `target_end_date`
