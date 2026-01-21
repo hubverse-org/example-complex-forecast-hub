@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-deps-cache-on-main:
-    if: github.repository_owner == 'Infectious-Disease-Modeling-Hubs'
+    if: github.repository_owner == 'hubverse-org'
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}

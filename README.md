@@ -6,9 +6,8 @@
 **This repository is under construction.**
 
 This repository is designed as an example modeling Hub that follows the
-infrastructure guidelines laid out by the [Consortium of Infectious
-Disease Modeling
-Hubs](https://github.com/Infectious-Disease-Modeling-Hubs/).
+infrastructure guidelines laid out by the
+[hubverse](https://hubverse.io).
 
 The example model outputs that are provided here are adapted from
 forecasts submitted to the FluSight Forecast Hub for the 2022/23 season.
@@ -22,14 +21,18 @@ output data and target data.**
 
 ## Working with the data in R
 
-Install the [hubData
-package](https://infectious-disease-modeling-hubs.github.io/hubData/) to
-work with the data in R.
+To work with the data in R, you can install the [latest version of
+hubData from the
+R-universe](https://hubverse-org.r-universe.dev/hubData):
+
+``` r
+install.packages("hubData", repos = c("https://hubverse-org.r-universe.dev", "https://cloud.r-project.org"))
+```
 
 To connect to a local copy of the data, first clone this repository.
 
 You can then use functions in the `hubData` package to connect to hub
-data as well as dplyr functions to filter and select data prior to
+data as well as `dplyr` functions to filter and select data prior to
 collecting the data into R.
 
 ``` r
@@ -40,9 +43,6 @@ library(dplyr)
 #> The following objects are masked from 'package:stats':
 #> 
 #>     filter, lag
-#> The following object is masked from 'package:testthat':
-#> 
-#>     matches
 #> The following objects are masked from 'package:base':
 #> 
 #>     intersect, setdiff, setequal, union
@@ -64,18 +64,18 @@ target_time_series_data <- connect_target_timeseries() |>
   collect()
 target_time_series_data
 #> # A tibble: 20,510 × 4
-#>    date       target          location observation
-#>    <date>     <chr>           <chr>          <dbl>
-#>  1 2020-01-11 wk inc flu hosp 01                 0
-#>  2 2020-01-11 wk inc flu hosp 15                 0
-#>  3 2020-01-11 wk inc flu hosp 18                 0
-#>  4 2020-01-11 wk inc flu hosp 27                 0
-#>  5 2020-01-11 wk inc flu hosp 30                 0
-#>  6 2020-01-11 wk inc flu hosp 37                 0
-#>  7 2020-01-11 wk inc flu hosp 48                 0
-#>  8 2020-01-11 wk inc flu hosp US                 1
-#>  9 2020-01-18 wk inc flu hosp 01                 0
-#> 10 2020-01-18 wk inc flu hosp 15                 0
+#>    target_end_date target          location observation
+#>    <date>          <chr>           <chr>          <dbl>
+#>  1 2020-01-11      wk inc flu hosp 01                 0
+#>  2 2020-01-11      wk inc flu hosp 15                 0
+#>  3 2020-01-11      wk inc flu hosp 18                 0
+#>  4 2020-01-11      wk inc flu hosp 27                 0
+#>  5 2020-01-11      wk inc flu hosp 30                 0
+#>  6 2020-01-11      wk inc flu hosp 37                 0
+#>  7 2020-01-11      wk inc flu hosp 48                 0
+#>  8 2020-01-11      wk inc flu hosp US                 1
+#>  9 2020-01-18      wk inc flu hosp 01                 0
+#> 10 2020-01-18      wk inc flu hosp 15                 0
 #> # ℹ 20,500 more rows
 ```
 
