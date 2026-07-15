@@ -131,7 +131,7 @@ where the hub data is stored. You can do this using the `s3_bucket()`
 function from the `hubData` package.
 
 ``` r
-hub_path <- s3_bucket("hubverse-example-complex-forecast-hub")
+hub_path <- s3_bucket("example-complex-forecast-hub")
 ```
 
 You can then use the same `connect_hub()` and `connect_target_*()`
@@ -146,21 +146,19 @@ connect_hub(hub_path, skip_checks = TRUE) |>
   filter(target_end_date == "2022-10-22",
          location == "02") |>
   collect_hub()
-#> ℹ Updating superseded URL `Infectious-Disease-Modeling-hubs` to `hubverse-org`
-#> ℹ Updating superseded URL `Infectious-Disease-Modeling-hubs` to `hubverse-org`
 #> # A tibble: 687 × 9
-#>    model_id   location reference_date horizon target_end_date target output_type
-#>  * <chr>      <chr>    <date>           <int> <date>          <chr>  <chr>      
-#>  1 Flusight-… 02       2022-10-22           0 2022-10-22      wk in… quantile   
-#>  2 Flusight-… 02       2022-10-22           0 2022-10-22      wk in… quantile   
-#>  3 Flusight-… 02       2022-10-22           0 2022-10-22      wk in… quantile   
-#>  4 Flusight-… 02       2022-10-22           0 2022-10-22      wk in… quantile   
-#>  5 Flusight-… 02       2022-10-22           0 2022-10-22      wk in… quantile   
-#>  6 Flusight-… 02       2022-10-22           0 2022-10-22      wk in… quantile   
-#>  7 Flusight-… 02       2022-10-22           0 2022-10-22      wk in… quantile   
-#>  8 Flusight-… 02       2022-10-22           0 2022-10-22      wk in… quantile   
-#>  9 Flusight-… 02       2022-10-22           0 2022-10-22      wk in… quantile   
-#> 10 Flusight-… 02       2022-10-22           0 2022-10-22      wk in… quantile   
+#>    model_id   reference_date target horizon location target_end_date output_type
+#>  * <chr>      <date>         <chr>    <int> <chr>    <date>          <chr>      
+#>  1 Flusight-… 2022-10-22     wk in…       0 02       2022-10-22      quantile   
+#>  2 Flusight-… 2022-10-22     wk in…       0 02       2022-10-22      quantile   
+#>  3 Flusight-… 2022-10-22     wk in…       0 02       2022-10-22      quantile   
+#>  4 Flusight-… 2022-10-22     wk in…       0 02       2022-10-22      quantile   
+#>  5 Flusight-… 2022-10-22     wk in…       0 02       2022-10-22      quantile   
+#>  6 Flusight-… 2022-10-22     wk in…       0 02       2022-10-22      quantile   
+#>  7 Flusight-… 2022-10-22     wk in…       0 02       2022-10-22      quantile   
+#>  8 Flusight-… 2022-10-22     wk in…       0 02       2022-10-22      quantile   
+#>  9 Flusight-… 2022-10-22     wk in…       0 02       2022-10-22      quantile   
+#> 10 Flusight-… 2022-10-22     wk in…       0 02       2022-10-22      quantile   
 #> # ℹ 677 more rows
 #> # ℹ 2 more variables: output_type_id <chr>, value <dbl>
 ```
